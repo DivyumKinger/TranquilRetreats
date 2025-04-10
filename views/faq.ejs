@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ - Tranquil Retreats</title>
+    <link rel="stylesheet" href="/faq.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-content">
+        <img src="/logo.png" alt="Tranquil Retreats Logo" class="small-logo" />
+        <h1>Tranquil Retreats</h1>
+        <p class="tagline">Experience Serenity Among the Hills</p>
+      </div>
+      <nav class="main-nav">
+        <a href="/"><i class="fas fa-home"></i> Home</a>
+        <a href="/rooms"><i class="fas fa-bed"></i> Rooms</a>
+        <a href="/services"><i class="fas fa-concierge-bell"></i> Services</a>
+        <a href="/booking" class="cta-button"
+          ><i class="fas fa-calendar-alt"></i> Book Now</a
+        >
+        <a href="/about"><i class="fas fa-info-circle"></i> About Us</a>
+        <a href="/policies"><i class="fas fa-scroll"></i> Policies</a>
+        <a href="/testimonials"><i class="fas fa-comments"></i> Testimonials</a>
+        <div class="auth-links">
+          <a href="/login"><i class="fas fa-sign-in-alt"></i> Log In</a>
+          <a href="/register"><i class="fas fa-user-plus"></i> Register</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="faq-container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="search-box">
+        <input type="text" placeholder="Search FAQs..." id="faqSearch" />
+      </div>
+
+      <div class="faq-grid">
+        <section class="faq-item">
+          <h3 class="faq-question">
+            What are the check-in and check-out times?
+          </h3>
+          <div class="faq-answer">
+            <p>
+              Check-in starts at 3:00 PM, and check-out is by 11:00 AM. Early
+              check-in and late check-out are subject to availability.
+            </p>
+          </div>
+        </section>
+
+        <section class="faq-item">
+          <h3 class="faq-question">Do you offer free Wi-Fi?</h3>
+          <div class="faq-answer">
+            <p>
+              Yes, we offer free Wi-Fi throughout the hotel to all our guests.
+            </p>
+          </div>
+        </section>
+
+        <section class="faq-item">
+          <h3 class="faq-question">Is breakfast included in the room rate?</h3>
+          <div class="faq-answer">
+            <p>
+              Yes, breakfast is included in your stay, and it is served daily
+              from 7:00 AM to 10:00 AM.
+            </p>
+          </div>
+        </section>
+
+        <section class="faq-item">
+          <h3 class="faq-question">Can I bring my pet?</h3>
+          <div class="faq-answer">
+            <p>
+              Pets are welcome in certain rooms. Please contact us in advance to
+              ensure availability for your furry friend.
+            </p>
+          </div>
+        </section>
+
+        <section class="faq-item">
+          <h3 class="faq-question">Is parking available?</h3>
+          <div class="faq-answer">
+            <p>Yes, we have free parking available for all our guests.</p>
+          </div>
+        </section>
+
+        <section class="faq-item">
+          <h3 class="faq-question">Can I cancel or modify my booking?</h3>
+          <div class="faq-answer">
+            <p>
+              Yes, you can cancel or modify your booking up to 48 hours before
+              the check-in date without any charge. After that, a cancellation
+              fee may apply.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2025 Tranquil Retreats. All rights reserved.</p>
+    </footer>
+
+    <script>
+      $(document).ready(function () {
+        $(".faq-question").click(function () {
+          $(this).next(".faq-answer").slideToggle();
+          $(this).toggleClass("active");
+        });
+
+        $("#faqSearch").on("input", function () {
+          let search = $(this).val().toLowerCase();
+          $(".faq-item").each(function () {
+            let text = $(this).text().toLowerCase();
+            $(this).toggle(text.includes(search));
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

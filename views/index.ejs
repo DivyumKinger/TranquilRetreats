@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tranquil Retreats - Luxury Mountain Resort</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="nav-container">
+        <div class="logo">
+          <img src="/logo.png" alt="Tranquil Retreats" class="small-logo" />
+        </div>
+        <nav>
+          <a href="/"><i class="fas fa-home"></i> Home</a>
+          <a href="/rooms"><i class="fas fa-bed"></i> Rooms</a>
+          <a href="/services"><i class="fas fa-concierge-bell"></i> Services</a>
+          <a href="/about"><i class="fas fa-info-circle"></i> About Us</a>
+          <a href="/policies"><i class="fas fa-scroll"></i> Policies</a>
+          <a href="/testimonials"
+            ><i class="fas fa-comments"></i> Testimonials</a
+          >
+          <a href="/faq"><i class="fas fa-question-circle"></i> FAQ</a>
+
+          <!-- Auth links section - dynamically updated -->
+          <span id="auth-section">
+            <% if (user) { %>
+            <span class="user-welcome"
+              ><i class="fas fa-user-circle"></i> Welcome, <%= user.username
+              %></span
+            >
+            <a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            <% } else { %>
+            <a href="/login"><i class="fas fa-sign-in-alt"></i> Log In</a>
+            <a href="/register"><i class="fas fa-user-plus"></i> Register</a>
+            <% } %>
+          </span>
+
+          <a href="/checkout"><i class="fas fa-shopping-cart"></i> Checkout</a>
+          <a href="/booking" class="cta-button"
+            ><i class="fas fa-calendar-check"></i> Book Now</a
+          >
+        </nav>
+      </div>
+      <div class="hero">
+        <h1>Experience Serenity Among the Hills</h1>
+        <p id="welcome-message">
+          <% if (user) { %> Welcome back, <%= user.username %>! Your email is
+          <%= user.email %>. <% } else { %> Discover luxury living with
+          breathtaking mountain views. <% } %>
+        </p>
+        <a href="/booking" class="cta-button">Reserve Your Stay</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="features">
+        <div class="feature-card">
+          <i class="fas fa-mountain fa-2x"></i>
+          <h3>Breathtaking Views</h3>
+          <p>Wake up to panoramic mountain vistas from every suite</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-star fa-2x"></i>
+          <h3>Exclusive Suites</h3>
+          <p>Luxuriously appointed rooms with premium amenities</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-utensils fa-2x"></i>
+          <h3>Fine Dining</h3>
+          <p>Exquisite culinary experiences with local ingredients</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-spa fa-2x"></i>
+          <h3>Spa & Wellness</h3>
+          <p>Rejuvenate your body and soul in our premium spa</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div>
+          <h4>Quick Links</h4>
+          <a href="/about">About Us</a>
+          <a href="/policies">Policies</a>
+          <a href="/testimonials">Testimonials</a>
+          <a href="/faq">FAQ</a>
+        </div>
+        <div>
+          <h4>Contact Us</h4>
+          <p><i class="fas fa-phone"></i>6754320925</p>
+          <p><i class="fas fa-envelope"></i> info@tranquilretreats.com</p>
+        </div>
+        <div>
+          <h4>Follow Us</h4>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Tranquil Retreats. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const authSection = document.getElementById("auth-section");
+        const username = localStorage.getItem("username");
+
+        if (username) {
+          authSection.innerHTML = `
+            <span class="user-welcome">
+              <i class="fas fa-user-circle"></i> Welcome, ${username}
+            </span>
+            <a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+          `;
+
+          document.getElementById("logout").addEventListener("click", () => {
+            localStorage.removeItem("token");
+            localStorage.removeItem("username");
+            window.location.href = "/login";
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

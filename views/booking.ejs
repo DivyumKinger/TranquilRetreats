@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Book your stay at Tranquil Retreats - Luxury Mountain Resort"
+    />
+    <title>Book Your Stay - Tranquil Retreats</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/booking.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="nav-container">
+        <div class="logo">Tranquil Retreats</div>
+        <nav>
+          <a href="/"><i class="fas fa-home"></i> Home</a>
+          <a href="/rooms"><i class="fas fa-bed"></i> Rooms</a>
+          <a href="/services"><i class="fas fa-concierge-bell"></i> Services</a>
+          <a href="/booking" class="active"
+            ><i class="fas fa-calendar-check"></i> Book Now</a
+          >
+          <a href="/about"><i class="fas fa-info-circle"></i> About Us</a>
+          <a href="/testimonials"
+            ><i class="fas fa-comments"></i> Testimonials</a
+          >
+          <a href="/contact"><i class="fas fa-envelope"></i> Contact</a>
+          <a href="/login"><i class="fas fa-sign-in-alt"></i> Log In</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="booking-container">
+      <div class="booking-grid">
+        <section class="booking-form">
+          <div class="form-header">
+            <h2>Book Your Stay</h2>
+            <p>Complete your reservation details below</p>
+          </div>
+
+          <form action="/confirm-booking" method="POST" class="multi-step-form">
+            <div class="form-section">
+              <div class="date-picker">
+                <div class="form-group">
+                  <label for="checkin">
+                    <i class="fas fa-calendar-alt"></i> Check-in Date
+                  </label>
+                  <input type="date" id="checkin" name="checkin" required />
+                </div>
+                <div class="form-group">
+                  <label for="checkout">
+                    <i class="fas fa-calendar-alt"></i> Check-out Date
+                  </label>
+                  <input type="date" id="checkout" name="checkout" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="guests">
+                  <i class="fas fa-users"></i> Number of Guests
+                </label>
+                <select id="guests" name="guests" required>
+                  <option value="1">1 Guest</option>
+                  <option value="2">2 Guests</option>
+                  <option value="3">3 Guests</option>
+                  <option value="4">4 Guests</option>
+                </select>
+              </div>
+
+              <div class="room-selection">
+                <h3>Select Room Type</h3>
+                <div class="room-options">
+                  <div class="room-option">
+                    <input
+                      type="radio"
+                      id="standard"
+                      name="room"
+                      value="standard"
+                      required
+                    />
+                    <label for="standard">
+                      <div class="room-info">
+                        <h4>Standard Room</h4>
+                        <p>Perfect for solo travelers or couples</p>
+                        <span class="price">₹2500/night</span>
+                      </div>
+                    </label>
+                  </div>
+
+                  <div class="room-option">
+                    <input
+                      type="radio"
+                      id="deluxe"
+                      name="room"
+                      value="deluxe"
+                      required
+                    />
+                    <label for="deluxe">
+                      <div class="room-info">
+                        <h4>Deluxe Room</h4>
+                        <p>Spacious room with premium amenities</p>
+                        <span class="price">₹5000/night</span>
+                      </div>
+                    </label>
+                  </div>
+
+                  <div class="room-option">
+                    <input
+                      type="radio"
+                      id="suite"
+                      name="room"
+                      value="suite"
+                      required
+                    />
+                    <label for="suite">
+                      <div class="room-info">
+                        <h4>Luxury Suite</h4>
+                        <p>Ultimate luxury with panoramic views</p>
+                        <span class="price">₹10000/night</span>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <input type="hidden" name="summary-checkin" id="hidden-checkin" />
+              <input
+                type="hidden"
+                name="summary-checkout"
+                id="hidden-checkout"
+              />
+              <input type="hidden" name="summary-guests" id="hidden-guests" />
+              <input type="hidden" name="summary-room" id="hidden-room" />
+              <input type="hidden" name="summary-total" id="hidden-total" />
+
+              <button type="submit" class="submit-btn">
+                <i class="fas fa-check"></i> Complete Booking
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <aside class="booking-summary">
+          <div class="summary-card">
+            <h3>Booking Summary</h3>
+            <div class="summary-details">
+              <div class="summary-item">
+                <span>Check-in</span>
+                <span id="summary-checkin">Select date</span>
+              </div>
+              <div class="summary-item">
+                <span>Check-out</span>
+                <span id="summary-checkout">Select date</span>
+              </div>
+              <div class="summary-item">
+                <span>Guests</span>
+                <span id="summary-guests">1 Guest</span>
+              </div>
+              <div class="summary-item">
+                <span>Room Type</span>
+                <span id="summary-room">Select room</span>
+              </div>
+              <div class="summary-total">
+                <span>Total</span>
+                <span id="summary-total">₹0.00</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-info">
+          <p>&copy; <span id="footer-year"></span> Tranquil Retreats</p>
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms-conditions">Terms & Conditions</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Dynamically set the footer year
+      document.getElementById("footer-year").textContent =
+        new Date().getFullYear();
+
+      // Update booking summary dynamically
+      const checkinInput = document.getElementById("checkin");
+      const checkoutInput = document.getElementById("checkout");
+      const guestsInput = document.getElementById("guests");
+      const roomInputs = document.querySelectorAll('input[name="room"]');
+      const summaryCheckin = document.getElementById("summary-checkin");
+      const summaryCheckout = document.getElementById("summary-checkout");
+      const summaryGuests = document.getElementById("summary-guests");
+      const summaryRoom = document.getElementById("summary-room");
+      const summaryTotal = document.getElementById("summary-total");
+      const hiddenCheckin = document.getElementById("hidden-checkin");
+      const hiddenCheckout = document.getElementById("hidden-checkout");
+      const hiddenGuests = document.getElementById("hidden-guests");
+      const hiddenRoom = document.getElementById("hidden-room");
+      const hiddenTotal = document.getElementById("hidden-total");
+
+      function updateSummary() {
+        const checkinDate = checkinInput.value;
+        const checkoutDate = checkoutInput.value;
+        const guests = guestsInput.value;
+        let selectedRoom = "";
+        let roomPrice = 0;
+
+        roomInputs.forEach((room) => {
+          if (room.checked) {
+            selectedRoom =
+              room.nextElementSibling.querySelector("h4").textContent;
+            roomPrice = parseInt(
+              room.nextElementSibling
+                .querySelector(".price")
+                .textContent.replace("₹", "")
+            );
+          }
+        });
+
+        const checkin = new Date(checkinDate);
+        const checkout = new Date(checkoutDate);
+        const nights = (checkout - checkin) / (1000 * 60 * 60 * 24);
+        const total = nights > 0 ? nights * roomPrice : 0;
+
+        summaryCheckin.textContent = checkinDate || "Select date";
+        summaryCheckout.textContent = checkoutDate || "Select date";
+        summaryGuests.textContent = `${guests} Guest${guests > 1 ? "s" : ""}`;
+        summaryRoom.textContent = selectedRoom || "Select room";
+        summaryTotal.textContent = `₹${total.toFixed(2)}`;
+
+        hiddenCheckin.value = checkinDate;
+        hiddenCheckout.value = checkoutDate;
+        hiddenGuests.value = guests;
+        hiddenRoom.value = selectedRoom;
+        hiddenTotal.value = total.toFixed(2);
+      }
+
+      checkinInput.addEventListener("change", updateSummary);
+      checkoutInput.addEventListener("change", updateSummary);
+      guestsInput.addEventListener("change", updateSummary);
+      roomInputs.forEach((room) =>
+        room.addEventListener("change", updateSummary)
+      );
+    </script>
+  </body>
+</html>

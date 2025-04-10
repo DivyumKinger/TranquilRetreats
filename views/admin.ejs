@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Admin Dashboard - Tranquil Retreats. Manage bookings, rooms, and guest services efficiently."
+    />
+    <title>Admin Dashboard - Tranquil Retreats</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/admin.css" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <aside class="sidebar">
+        <div class="logo">
+          <i class="fas fa-mountain small-logo"></i>
+          <span>Tranquil Retreats</span>
+        </div>
+        <nav class="sidebar-nav">
+          <a href="index.html"><i class="fas fa-home"></i> Home</a>
+          <a href="rooms.html"><i class="fas fa-bed"></i> Rooms</a>
+          <a href="booking.html"
+            ><i class="fas fa-calendar-alt"></i> Bookings</a
+          >
+          <a href="admin.html" class="active"
+            ><i class="fas fa-chart-line"></i> Dashboard</a
+          >
+          <a href="guests.html"><i class="fas fa-users"></i> Guests</a>
+          <a href="reports.html"><i class="fas fa-file-alt"></i> Reports</a>
+          <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+          <a href="logout.html" class="logout"
+            ><i class="fas fa-sign-out-alt"></i> Sign Out</a
+          >
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <header class="dashboard-header">
+          <div class="header-search">
+            <i class="fas fa-search"></i>
+            <input type="search" placeholder="Search bookings..." />
+          </div>
+          <div class="header-user">
+            <span class="notifications">
+              <i class="fas fa-bell"></i>
+              <span class="badge">3</span>
+            </span>
+            <!-- <img src="/api/placeholder/32/32" alt="Admin" class="user-avatar"> -->
+          </div>
+        </header>
+
+        <div class="dashboard-stats">
+          <div class="stat-card">
+            <i class="fas fa-calendar-check"></i>
+            <div class="stat-info">
+              <h3>Total Bookings</h3>
+              <p>248</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-bed"></i>
+            <div class="stat-info">
+              <h3>Available Rooms</h3>
+              <p>15</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-users"></i>
+            <div class="stat-info">
+              <h3>Current Guests</h3>
+              <p>42</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-percentage"></i>
+            <div class="stat-info">
+              <h3>Occupancy Rate</h3>
+              <p>78%</p>
+            </div>
+          </div>
+        </div>
+
+        <section class="bookings-section">
+          <div class="section-header">
+            <h2>Current Bookings</h2>
+            <div class="actions">
+              <button class="btn"><i class="fas fa-filter"></i> Filter</button>
+              <button class="btn btn-primary">
+                <i class="fas fa-plus"></i> New Booking
+              </button>
+            </div>
+          </div>
+
+          <div class="table-container">
+            <table class="bookings-table">
+              <thead>
+                <tr>
+                  <th>Booking ID</th>
+                  <th>Guest Name</th>
+                  <th>Room Type</th>
+                  <th>Check-in</th>
+                  <th>Check-out</th>
+                  <th>Guests</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#001</td>
+                  <td>
+                    <div class="guest-info">
+                      <!-- <img src="/api/placeholder/32/32" alt="John Doe"> -->
+                      <span>Chris Pratt</span>
+                    </div>
+                  </td>
+                  <td>Deluxe Room</td>
+                  <td>2025-12-26</td>
+                  <td>2025-12-30</td>
+                  <td>2</td>
+                  <td><span class="status confirmed">Confirmed</span></td>
+                  <td>
+                    <div class="actions">
+                      <button class="icon-btn">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="icon-btn">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#002</td>
+                  <td>
+                    <div class="guest-info">
+                      <!-- <img src="/api/placeholder/32/32" alt="Jane Smith"> -->
+                      <span>Nitish Kumar</span>
+                    </div>
+                  </td>
+                  <td>Luxury Suite</td>
+                  <td>2025-12-28</td>
+                  <td>2025-12-31</td>
+                  <td>3</td>
+                  <td><span class="status pending">Pending</span></td>
+                  <td>
+                    <div class="actions">
+                      <button class="icon-btn">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="icon-btn">
+                        <i class="fas fa-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

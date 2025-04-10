@@ -1,0 +1,210 @@
+:root {
+  --primary-color: #2c3e50;
+  --accent-color: #3498db;
+  --text-color: #333;
+  --light-bg: #f5f6fa;
+  --shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* Header & Navigation */
+header {
+  background: white;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.top-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent-color);
+}
+
+.nav-auth .btn-login,
+.nav-auth .btn-register {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.btn-login {
+  color: var(--accent-color);
+}
+
+.btn-register {
+  background: var(--accent-color);
+  color: white;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--light-bg);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Room Grid */
+.room-grid {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.room-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.room-card:hover {
+  transform: translateY(-5px);
+}
+
+.room-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.room-info {
+  padding: 1.5rem;
+}
+
+.room-info h2 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.amenities {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.amenities li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.amenities li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.book-btn {
+  display: inline-block;
+  background: var(--accent-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.book-btn:hover {
+  background: var(--primary-color);
+}
+
+/* Footer */
+footer {
+  background: var(--primary-color);
+  color: white;
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 2rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .top-nav {
+      flex-direction: column;
+      gap: 1rem;
+  }
+  
+  .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+  
+  .footer-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+  }
+  
+  .footer-links a {
+      margin: 0 1rem;
+  }
+}
+
+/* Small Logo */
+.small-logo {
+  width: 120px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}

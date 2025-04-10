@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Booking Confirmation - Tranquil Retreats"
+    />
+    <title>Booking Confirmation - Tranquil Retreats</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/confirm-booking.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="nav-container">
+        <div class="logo">Tranquil Retreats</div>
+        <nav>
+          <a href="/"><i class="fas fa-home"></i> Home</a>
+          <a href="/rooms"><i class="fas fa-bed"></i> Rooms</a>
+          <a href="/services"><i class="fas fa-concierge-bell"></i> Services</a>
+          <a href="/booking"><i class="fas fa-calendar-check"></i> Book Now</a>
+          <a href="/about"><i class="fas fa-info-circle"></i> About Us</a>
+          <a href="/testimonials"
+            ><i class="fas fa-comments"></i> Testimonials</a
+          >
+          <a href="/contact"><i class="fas fa-envelope"></i> Contact</a>
+          <a href="/login"><i class="fas fa-sign-in-alt"></i> Log In</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="confirmation-container">
+      <div class="confirmation-card">
+        <h2>Booking Confirmed!</h2>
+        <p>
+          Thank you for booking with Tranquil Retreats. Here are your booking
+          details:
+        </p>
+        <div class="confirmation-details">
+          <div class="detail-item">
+            <span>Check-in:</span>
+            <span><%= summaryCheckin %></span>
+          </div>
+          <div class="detail-item">
+            <span>Check-out:</span>
+            <span><%= summaryCheckout %></span>
+          </div>
+          <div class="detail-item">
+            <span>Guests:</span>
+            <span><%= summaryGuests %></span>
+          </div>
+          <div class="detail-item">
+            <span>Room Type:</span>
+            <span><%= summaryRoom %></span>
+          </div>
+          <div class="detail-item total">
+            <span>Total Amount:</span>
+            <span>₹<%= summaryTotal %></span>
+          </div>
+        </div>
+        <a href="/" class="btn">Back to Home</a>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-info">
+          <p>&copy; <span id="footer-year"></span> Tranquil Retreats</p>
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms-conditions">Terms & Conditions</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Dynamically set the footer year
+      document.getElementById("footer-year").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>

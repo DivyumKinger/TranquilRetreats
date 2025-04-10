@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Policies - Tranquil Hillside Hotel</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-50">
+    <header class="bg-white shadow-md">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center space-x-4">
+          <img
+            src="/logo.png"
+            alt="Tranquil Hillside Hotel Logo"
+            class="small-logo"
+          />
+          <div class="flex justify-between h-16">
+            <div class="flex space-x-8">
+              <a href="/"><i class="fas fa-home"></i> Home</a>
+              <a href="/rooms"><i class="fas fa-bed"></i> Rooms</a>
+              <a href="/services"
+                ><i class="fas fa-concierge-bell"></i> Services</a
+              >
+              <a href="/about"><i class="fas fa-info-circle"></i> About</a>
+              <a href="/policies" class="active"
+                ><i class="fas fa-scroll"></i> Policies</a
+              >
+            </div>
+            <div class="flex space-x-4">
+              <a
+                href="/booking"
+                class="flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                >Book Now</a
+              >
+              <a
+                href="/login"
+                class="flex items-center px-3 py-2 text-gray-700 hover:text-gray-900"
+                >Log In</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12">
+      <h1 class="text-4xl font-bold text-gray-900 mb-12">Hotel Policies</h1>
+
+      <div class="space-y-8">
+        <section class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="flex items-center space-x-3 mb-4">
+            <svg
+              class="w-6 h-6 text-blue-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <h2 class="text-2xl font-semibold text-gray-900">
+              Check-In and Check-Out
+            </h2>
+          </div>
+          <div class="ml-9 space-y-3">
+            <p class="text-gray-600">
+              <span class="font-medium">Check-in:</span> 3:00 PM onwards
+            </p>
+            <p class="text-gray-600">
+              <span class="font-medium">Check-out:</span> 11:00 AM
+            </p>
+            <p class="text-sm text-gray-500 mt-2">
+              Early check-in and late check-out available upon request, subject
+              to availability.
+            </p>
+          </div>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="flex items-center space-x-3 mb-4">
+            <svg
+              class="w-6 h-6 text-blue-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+            <h2 class="text-2xl font-semibold text-gray-900">
+              Cancellation Policy
+            </h2>
+          </div>
+          <div class="ml-9">
+            <p class="text-gray-600">
+              Free cancellation up to 48 hours before check-in. Cancellations
+              after this period will incur a charge equivalent to one night's
+              stay.
+            </p>
+            <div class="mt-4 p-4 bg-blue-50 rounded-md">
+              <p class="text-sm text-blue-700">
+                We recommend booking with flexible rates for maximum peace of
+                mind.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="flex items-center space-x-3 mb-4">
+            <svg
+              class="w-6 h-6 text-blue-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905a3.61 3.61 0 01-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
+              />
+            </svg>
+            <h2 class="text-2xl font-semibold text-gray-900">Pet Policy</h2>
+          </div>
+          <div class="ml-9">
+            <p class="text-gray-600">
+              Pets are welcome in select rooms for a nominal fee. Please inform
+              us in advance if you are bringing a pet.
+            </p>
+            <ul class="mt-4 space-y-2 text-sm text-gray-600">
+              <li class="flex items-center">
+                <svg
+                  class="w-4 h-4 mr-2 text-green-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Maximum 2 pets per room
+              </li>
+              <li class="flex items-center">
+                <svg
+                  class="w-4 h-4 mr-2 text-green-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Pet fee: ₹500 per night
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 mt-16">
+      <div class="max-w-7xl mx-auto px-4 py-8">
+        <div class="text-center">
+          <p>&copy; 2025 Tranquil Hillside Hotel. All rights reserved.</p>
+          <div class="mt-4 space-x-4">
+            <a href="privacy.html" class="hover:text-white">Privacy Policy</a>
+            <a href="terms.html" class="hover:text-white">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

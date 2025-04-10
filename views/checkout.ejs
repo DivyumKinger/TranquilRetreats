@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Secure checkout page for Tranquil Retreats hotel booking"
+    />
+    <title>Checkout - Tranquil Retreats</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/checkout.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-content">
+        <img src="/logo.png" alt="Tranquil Retreats Logo" class="small-logo" />
+        <h1>Tranquil Retreats</h1>
+        <p class="tagline">Experience Serenity Among the Hills</p>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html" class="nav-link"
+            ><i class="fas fa-home" aria-hidden="true"></i> Home</a
+          >
+          <a href="rooms.html" class="nav-link"
+            ><i class="fas fa-bed" aria-hidden="true"></i> Rooms</a
+          >
+          <a href="services.html" class="nav-link"
+            ><i class="fas fa-concierge-bell" aria-hidden="true"></i>
+            Services</a
+          >
+          <a href="booking.html" class="nav-link cta"
+            ><i class="fas fa-calendar-alt" aria-hidden="true"></i> Book Now</a
+          >
+          <a href="about.html" class="nav-link"
+            ><i class="fas fa-info-circle" aria-hidden="true"></i> About Us</a
+          >
+          <a href="policies.html" class="nav-link"
+            ><i class="fas fa-shield-alt" aria-hidden="true"></i> Policies</a
+          >
+          <a href="testimonials.html" class="nav-link"
+            ><i class="fas fa-star" aria-hidden="true"></i> Testimonials</a
+          >
+          <div class="auth-links">
+            <a href="login.html" class="nav-link"
+              ><i class="fas fa-sign-in-alt" aria-hidden="true"></i> Log In</a
+            >
+            <a href="register.html" class="nav-link"
+              ><i class="fas fa-user-plus" aria-hidden="true"></i> Register</a
+            >
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section class="checkout-form" aria-labelledby="checkout-title">
+        <h2 id="checkout-title">
+          Secure Checkout <i class="fas fa-shield-alt"></i>
+        </h2>
+        <div class="progress-bar">
+          <div class="progress-step active">Booking</div>
+          <div class="progress-step current">Payment</div>
+          <div class="progress-step">Confirmation</div>
+        </div>
+
+        <form
+          action="/submit-checkout"
+          method="POST"
+          autocomplete="on"
+          class="payment-form"
+        >
+          <div class="form-sections">
+            <section class="form-section personal-info">
+              <h3>Personal Information</h3>
+              <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Enter your full name"
+                  autocomplete="name"
+                />
+                <span class="field-hint">As it appears on your ID</span>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="Enter your email"
+                  autocomplete="email"
+                />
+                <span class="field-hint"
+                  >Booking confirmation will be sent here</span
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  placeholder="Enter your phone number"
+                  autocomplete="tel"
+                />
+              </div>
+            </section>
+
+            <section class="form-section billing-info">
+              <h3>Billing Information</h3>
+              <div class="form-group">
+                <label for="address">Billing Address:</label>
+                <textarea
+                  id="address"
+                  name="address"
+                  required
+                  placeholder="Enter your complete billing address"
+                  autocomplete="street-address"
+                ></textarea>
+              </div>
+            </section>
+
+            <section class="form-section payment-info">
+              <h3>Payment Details</h3>
+              <div class="form-group">
+                <label for="payment-method">Payment Method:</label>
+                <div class="payment-options">
+                  <select id="payment-method" name="payment-method" required>
+                    <option value="">Select payment method</option>
+                    <option value="credit-card">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                  </select>
+                  <div class="payment-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-paypal"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-details">
+                <div class="form-group">
+                  <label for="card-number">Card Number:</label>
+                  <input
+                    type="text"
+                    id="card-number"
+                    name="card-number"
+                    required
+                    pattern="\d{16}"
+                    placeholder="Enter 16-digit card number"
+                    autocomplete="cc-number"
+                  />
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group half">
+                    <label for="expiry-date">Expiry Date:</label>
+                    <input
+                      type="month"
+                      id="expiry-date"
+                      name="expiry-date"
+                      required
+                      autocomplete="cc-exp"
+                    />
+                  </div>
+
+                  <div class="form-group half">
+                    <label for="cvv">CVV:</label>
+                    <input
+                      type="text"
+                      id="cvv"
+                      name="cvv"
+                      required
+                      pattern="\d{3,4}"
+                      maxlength="4"
+                      placeholder="Enter CVV"
+                      autocomplete="cc-csc"
+                    />
+                    <span class="field-hint"
+                      >3 or 4 digits on back of card</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="submit-btn">
+              <i class="fas fa-lock"></i> Complete Booking
+              <span class="button-hint">Secured by SSL encryption</span>
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p class="copyright">
+          &copy; 2025 Tranquil Retreats. All rights reserved.
+        </p>
+        <div class="security-badges">
+          <!-- <img src="/images/ssl-badge.png" alt="SSL Secure" class="security-badge"> -->
+          <!-- <img src="/images/payment-secure-badge.png" alt="Secure Payments" class="security-badge"> -->
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
