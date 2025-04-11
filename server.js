@@ -24,15 +24,13 @@ app.use(helmet());
 app.use(cors());
 app.use(cookieParser());
 app.use(compression());
-app.use(express.static(path.join(__dirname, "public"))); // Ensure this line is present and correct
-
-// Configure session middleware
+app.use(express.static(path.join(__dirname, "public")));
 app.use(
   session({
-    secret: "your-secret-key", // Replace with a secure secret key
+    secret: "Tranquility1234@", // secure
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false }, // Set to true if using HTTPS
+    cookie: { secure: false },
   })
 );
 
