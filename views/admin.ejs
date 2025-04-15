@@ -26,20 +26,24 @@
           <span>Tranquil Retreats</span>
         </div>
         <nav class="sidebar-nav">
-          <a href="index.html"><i class="fas fa-home"></i> Home</a>
-          <a href="rooms.html"><i class="fas fa-bed"></i> Rooms</a>
-          <a href="booking.html"
-            ><i class="fas fa-calendar-alt"></i> Bookings</a
-          >
-          <a href="admin.html" class="active"
+          <a href="/"><i class="fas fa-home"></i> Home</a>
+          <a href="/rooms"><i class="fas fa-bed"></i> Rooms</a>
+          <a href="/booking"><i class="fas fa-calendar-alt"></i> Bookings</a>
+          <a href="/admin" class="active"
             ><i class="fas fa-chart-line"></i> Dashboard</a
           >
-          <a href="guests.html"><i class="fas fa-users"></i> Guests</a>
-          <a href="reports.html"><i class="fas fa-file-alt"></i> Reports</a>
-          <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
-          <a href="logout.html" class="logout"
+          <a href="#"><i class="fas fa-users"></i> Guests</a>
+          <a href="#"><i class="fas fa-file-alt"></i> Reports</a>
+          <a href="#"><i class="fas fa-cog"></i> Settings</a>
+          <% if (user) { %>
+          <a href="/logout" class="logout"
             ><i class="fas fa-sign-out-alt"></i> Sign Out</a
           >
+          <% } else { %>
+          <a href="/login" class="logout"
+            ><i class="fas fa-sign-in-alt"></i> Log In</a
+          >
+          <% } %>
         </nav>
       </aside>
 

@@ -33,7 +33,6 @@ app.use(
     cookie: { secure: false },
   })
 );
-
 app.post("/api/login", (req, res) => {
   const { email, password } = req.body;
 
@@ -46,7 +45,6 @@ app.post("/api/login", (req, res) => {
       username: "Divyum",
     },
   ];
-
   const user = users.find((u) => u.email === email && u.password === password);
 
   if (user) {

@@ -21,35 +21,41 @@
         <h1>Tranquil Retreats</h1>
         <p class="tagline">Experience Serenity Among the Hills</p>
         <nav class="main-nav" aria-label="Main navigation">
-          <a href="index.html" class="nav-link"
+          <a href="/" class="nav-link"
             ><i class="fas fa-home" aria-hidden="true"></i> Home</a
           >
-          <a href="rooms.html" class="nav-link"
+          <a href="/rooms" class="nav-link"
             ><i class="fas fa-bed" aria-hidden="true"></i> Rooms</a
           >
-          <a href="services.html" class="nav-link"
+          <a href="/services" class="nav-link"
             ><i class="fas fa-concierge-bell" aria-hidden="true"></i>
             Services</a
           >
-          <a href="booking.html" class="nav-link cta"
+          <a href="/booking" class="nav-link cta"
             ><i class="fas fa-calendar-alt" aria-hidden="true"></i> Book Now</a
           >
-          <a href="about.html" class="nav-link"
+          <a href="/about" class="nav-link"
             ><i class="fas fa-info-circle" aria-hidden="true"></i> About Us</a
           >
-          <a href="policies.html" class="nav-link"
+          <a href="/policies" class="nav-link"
             ><i class="fas fa-shield-alt" aria-hidden="true"></i> Policies</a
           >
-          <a href="testimonials.html" class="nav-link"
+          <a href="/testimonials" class="nav-link"
             ><i class="fas fa-star" aria-hidden="true"></i> Testimonials</a
           >
           <div class="auth-links">
-            <a href="login.html" class="nav-link"
+            <% if (user) { %>
+            <a href="/logout" class="nav-link"
+              ><i class="fas fa-sign-out-alt" aria-hidden="true"></i> Logout</a
+            >
+            <% } else { %>
+            <a href="/login" class="nav-link"
               ><i class="fas fa-sign-in-alt" aria-hidden="true"></i> Log In</a
             >
-            <a href="register.html" class="nav-link"
+            <a href="/register" class="nav-link"
               ><i class="fas fa-user-plus" aria-hidden="true"></i> Register</a
             >
+            <% } %>
           </div>
         </nav>
       </div>

@@ -23,6 +23,12 @@
           <a href="/"><i class="fas fa-home"></i> Home</a>
           <a href="/rooms"><i class="fas fa-bed"></i> Rooms</a>
           <a href="/services"><i class="fas fa-concierge-bell"></i> Services</a>
+          <% if (user) { %>
+          <a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+          <% } else { %>
+          <a href="/login"><i class="fas fa-sign-in-alt"></i> Log In</a>
+          <a href="/register"><i class="fas fa-user-plus"></i> Register</a>
+          <% } %>
         </div>
         <a
           href="/booking"
