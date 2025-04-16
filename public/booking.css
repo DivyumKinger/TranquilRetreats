@@ -24,7 +24,7 @@
 
 .form-header h2 {
   font-size: 2rem;
-  color: #2c3e50;
+  color: #253f58;
   margin-bottom: 0.5rem;
 }
 
@@ -46,7 +46,7 @@
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #2c3e50;
+  color: #2d4760;
   font-weight: 500;
 }
 
@@ -59,7 +59,7 @@ input[type="date"],
 select {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid #ddd;
+  border: 1px solid #dddddde4;
   border-radius: 6px;
   font-size: 1rem;
 }
@@ -70,7 +70,7 @@ select {
 
 .room-selection h3 {
   margin-bottom: 1rem;
-  color: #2c3e50;
+  color: #2c445c;
 }
 
 .room-options {
@@ -90,7 +90,7 @@ select {
   display: flex;
   padding: 1rem;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 9px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -131,7 +131,7 @@ select {
 .submit-btn {
   width: 100%;
   padding: 1rem;
-  background: #2c3e50;
+  background: #2e455b;
   color: white;
   border: none;
   border-radius: 6px;
@@ -172,7 +172,7 @@ select {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
-  color: #666;
+  color: #5c5858;
 }
 
 .summary-total {
@@ -182,7 +182,7 @@ select {
   display: flex;
   justify-content: space-between;
   font-weight: bold;
-  color: #2c3e50;
+  color: #273e56;
   font-size: 1.2rem;
 }
 
