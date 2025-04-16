@@ -205,6 +205,6 @@ footer {
 
 /* Small Logo */
 .small-logo {
-  width: 120px; /* Adjust the width as needed */
+  width: 60px; /* Smaller width for the logo */
   height: auto; /* Maintain aspect ratio */
 }

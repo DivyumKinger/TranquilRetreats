@@ -27,43 +27,15 @@ app.use(compression());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(
   session({
-    secret: "Tranquility1234@", // secure
+    secret: "Tranquility1234@",
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false },
   })
 );
-app.post("/api/login", (req, res) => {
-  const { email, password } = req.body;
-
-  // Simulate user authentication (replace with actual database logic)
-  const users = [
-    { email: "user@example.com", password: "password123", username: "JohnDoe" },
-    {
-      email: "divyum1737.be23@chitkara.edu.in",
-      password: "12345678",
-      username: "Divyum",
-    },
-  ];
-  const user = users.find((u) => u.email === email && u.password === password);
-
-  if (user) {
-    req.session.user = user; // Store user details in the session
-    res.json({
-      message: "Login successful",
-      token: "dummy-token", // Replace with actual token logic (e.g., JWT)
-      username: user.username,
-    });
-  } else {
-    res.status(401).json({
-      error: "Invalid credentials",
-      redirect: "/register",
-    });
-  }
-});
 
 app.get("/", (req, res) => {
-  const user = req.session.user || null; // Fetch user details from the session
+  const user = req.session.user || null;
   res.render("index", { user });
 });
 
@@ -82,14 +54,14 @@ const staticPages = [
 ];
 staticPages.forEach((page) => {
   app.get(`/${page}`, (req, res) => {
-    const user = null; // Replace with actual user data if available
+    const user = req.session.user || null;
     res.render(page, { user });
   });
 });
 
 app.get("/logout", (req, res) => {
   req.session.destroy(() => {
-    res.redirect("/login"); // Redirect to the login page after clearing the session
+    res.redirect("/login");
   });
 });
 

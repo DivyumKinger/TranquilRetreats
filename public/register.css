@@ -98,3 +98,9 @@ footer {
         margin-bottom: 10px;
     }
 }
+
+/* Small Logo Styles */
+.small-logo {
+    width: 120px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+}

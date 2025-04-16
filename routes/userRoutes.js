@@ -20,26 +20,38 @@ router.get("/", (req, res, next) => {
 
 // Register a new user
 router.post("/register", (req, res, next) => {
-  const { username, password } = req.body;
-  if (!username || !password) {
+  const { email, username, password } = req.body;
+  if (!email || !username || !password) {
     return res
       .status(400)
-      .json({ error: "Username and password are required" });
+      .json({ error: "Email, username, and password are required" });
   }
 
   fs.readFile(usersFile, "utf8", (err, data) => {
     if (err) return next(err);
     let users = JSON.parse(data);
-    if (users.find((u) => u.username === username)) {
-      return res.status(409).json({ error: "User already exists" });
+
+    if (users.find((u) => u.email === email)) {
+      return res.status(409).json({ error: "Email already registered" });
     }
-    users.push({ username, password });
+    if (users.find((u) => u.username === username)) {
+      return res.status(409).json({ error: "Username already taken" });
+    }
+
+    users.push({ email, username, password });
     fs.writeFile(usersFile, JSON.stringify(users, null, 2), (err) => {
       if (err) return next(err);
-      res.status(201).json({ message: "User registered successfully" });
+      // Set session user after registration
+      req.session.user = { email, username };
+      res.status(201).json({
+        message: "User registered successfully",
+        token: "dummy-token", // Replace with real token logic later
+        username,
+      });
     });
   });
 });
+
 // Login route
 router.post("/login", (req, res, next) => {
   const { email, password } = req.body;
@@ -53,7 +65,8 @@ router.post("/login", (req, res, next) => {
     let users = JSON.parse(data);
 
     const user = users.find(
-      (u) => u.username === email && u.password === password
+      (u) =>
+        (u.email === email || u.username === email) && u.password === password
     );
 
     if (!user) {
@@ -63,7 +76,13 @@ router.post("/login", (req, res, next) => {
       });
     }
 
-    res.json({ message: "Login successful", token: "dummy-token", username: user.username }); // You can implement JWT later
+    // Set session user after login
+    req.session.user = { email: user.email, username: user.username };
+    res.json({
+      message: "Login successful",
+      token: "dummy-token",
+      username: user.username,
+    }); // You can implement JWT later
   });
 });
 

@@ -53,7 +53,7 @@ document
       if (response.ok) {
         localStorage.setItem("token", data.token);
         alert("Registration successful! Redirecting to login...");
-        window.location.href = "login.html";
+        window.location.href = "/login";
       } else {
         alert(data.error || "Registration failed");
       }

@@ -36,12 +36,18 @@
           <a href="#"><i class="fas fa-file-alt"></i> Reports</a>
           <a href="#"><i class="fas fa-cog"></i> Settings</a>
           <% if (user) { %>
+          <span style="margin: 1rem 0 0 1rem; color: #3498db; font-weight: bold"
+            >Welcome, <%= user.username %></span
+          >
           <a href="/logout" class="logout"
             ><i class="fas fa-sign-out-alt"></i> Sign Out</a
           >
           <% } else { %>
           <a href="/login" class="logout"
             ><i class="fas fa-sign-in-alt"></i> Log In</a
+          >
+          <a href="/register" class="logout"
+            ><i class="fas fa-user-plus"></i> Register</a
           >
           <% } %>
         </nav>

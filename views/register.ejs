@@ -18,12 +18,16 @@
           <img
             src="/logo.png"
             alt="Tranquil Hillside Hotel Logo"
-            class="small-logo"
+            class="small-logo inline-block align-middle"
+            style="width: 80px; height: auto"
           />
           <a href="/"><i class="fas fa-home"></i> Home</a>
           <a href="/rooms"><i class="fas fa-bed"></i> Rooms</a>
           <a href="/services"><i class="fas fa-concierge-bell"></i> Services</a>
           <% if (user) { %>
+          <span style="margin-left: 1rem; color: #3498db; font-weight: bold"
+            >Welcome, <%= user.username %></span
+          >
           <a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
           <% } else { %>
           <a href="/login"><i class="fas fa-sign-in-alt"></i> Log In</a>

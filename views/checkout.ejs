@@ -45,6 +45,9 @@
           >
           <div class="auth-links">
             <% if (user) { %>
+            <span style="margin-left: 1rem; color: #3498db; font-weight: bold"
+              >Welcome, <%= user.username %></span
+            >
             <a href="/logout" class="nav-link"
               ><i class="fas fa-sign-out-alt" aria-hidden="true"></i> Logout</a
             >
