@@ -9,9 +9,12 @@ const compression = require("compression");
 const session = require("express-session");
 const userRoutes = require("./routes/userRoutes");
 const pageRoutes = require("./routes/pageRoutes");
+const connectDB = require("./db");
 
 const app = express();
 const port = 8080;
+
+connectDB();
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));

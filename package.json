@@ -17,6 +17,7 @@
     "express": "^4.21.2",
     "fs": "^0.0.1-security",
     "helmet": "^8.0.0",
+    "mongoose": "^8.14.2",
     "morgan": "^1.10.0",
     "path": "^0.12.7"
   }
