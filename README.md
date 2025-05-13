@@ -64,8 +64,6 @@ Tranquil_Retreats/
 3. Visit [http://localhost:8080](http://localhost:8080) in your browser.
 
 ## Usage
-- Register a new user at `/register`.
-- Log in at `/login`.
 - Browse rooms, book your stay, and explore hotel services.
 - Admin dashboard and booking management are UI-only (no backend logic yet).
 
@@ -74,13 +72,9 @@ Tranquil_Retreats/
 - **Frontend**: EJS, CSS, JavaScript
 - **Middleware**: Helmet, CORS, cookie-parser, compression, morgan, express-session
 
-## Security Notes
-- Passwords are currently stored in plaintext for demonstration. For production, use password hashing (e.g., bcrypt).
-- Session secret should be stored securely (e.g., in environment variables).
-
 ## License
 This project is for educational/demo purposes.
 
 ---
 
-**Tranquil Retreats** – Experience Serenity Among the Hills
+**Tranquil Retreats** – Experience Serenity
